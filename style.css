@@ -1,0 +1,310 @@
+
+/* =================================
+   SPENDWISE - WEEK 3
+   VISUAL DESIGN CHALLENGE
+================================= */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* Color Palette */
+:root {
+    --primary: #174C3C;
+    --primary-dark: #10382D;
+    --secondary: #D9A441;
+    --background: #F4F7F2;
+    --white: #FFFFFF;
+    --text: #26352F;
+    --muted: #718078;
+    --border: #DCE5DE;
+    --light-green: #E8F2EB;
+    --hover: #DCECE1;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--primary);
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+/* Header Card */
+.header {
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+    margin: 25px auto;
+    width: 92%;
+    max-width: 1150px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 25px rgba(23, 76, 60, 0.15);
+}
+
+.header img {
+    margin-bottom: 12px;
+    background-color: var(--white);
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.header h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+.header p {
+    color: #DDEBE2;
+    font-size: 16px;
+}
+
+/* Main Container */
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 30px auto;
+}
+
+/* General Section Cards */
+section {
+    background-color: var(--white);
+    padding: 30px;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(23, 76, 60, 0.06);
+}
+
+/* Budget Summary */
+.summary-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 180px;
+    background-color: var(--light-green);
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--primary);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card h3 {
+    color: var(--primary);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--primary-dark);
+}
+
+/* Add Expense Form */
+.add-expense-section {
+    border-top: 5px solid var(--primary);
+}
+
+.add-expense-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    color: var(--text);
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 14px 15px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    color: var(--text);
+    background-color: #FAFCFA;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(23, 76, 60, 0.12);
+    background-color: var(--white);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Expense Table */
+.expenses-section {
+    border-top: 5px solid var(--secondary);
+    overflow-x: auto;
+}
+
+.expenses-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.expenses-section th {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 16px;
+    text-align: left;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.expenses-section td {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+.expenses-section tbody tr:nth-child(even) {
+    background-color: var(--light-green);
+}
+
+.expenses-section tbody tr:nth-child(odd) {
+    background-color: var(--white);
+}
+
+.expenses-section tbody tr:hover {
+    background-color: var(--hover);
+    transition: background-color 0.3s ease;
+}
+
+/* Instructions */
+.instructions-section details {
+    background-color: var(--light-green);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px;
+}
+
+summary {
+    color: var(--primary);
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+}
+
+details p {
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+/* Video */
+.video-section iframe {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+
+    .header {
+        padding: 30px 15px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+    }
+
+    .expenses-section table {
+        min-width: 550px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+}
